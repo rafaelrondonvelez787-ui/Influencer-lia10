@@ -46,73 +46,7 @@
 <body>
     <div class="container">
         <h1>Autenticación</h1>
-        <div id="auth-section">
-            <label for="username">Nombre de usuario</label>
-            <input type="text" id="username" placeholder="Ingresa tu usuario">
-            <br>
-            <label for="password" class="hidden">Contraseña</label>
-            <input type="password" id="password" placeholder="Ingresa tu contraseña" class="hidden">
-            <br>
-            <button id="auth-button">Enviar</button>
-        </div>
-
-        <div id="question-section" class="hidden">
-            <p>¿Lia Thais es la super influencer?</p>
-            <button id="yes-button">Sí</button>
-            <button id="no-button">No</button>
-        </div>
-
-        <div id="final-section" class="hidden">
-            <p>¡Muy bien! 🎉</p>
-        </div>
+        <!-- Aquí va el resto del contenido -->
     </div>
-
-    <script>
-        const usernameInput = document.getElementById('username');
-        const passwordInput = document.getElementById('password');
-        const authButton = document.getElementById('auth-button');
-        const authSection = document.getElementById('auth-section');
-        const questionSection = document.getElementById('question-section');
-        const finalSection = document.getElementById('final-section');
-        const yesButton = document.getElementById('yes-button');
-        const noButton = document.getElementById('no-button');
-
-        let usernameValidated = false;
-
-        authButton.addEventListener('click', () => {
-            const username = usernameInput.value.trim().toLowerCase();
-
-            if (!usernameValidated) {
-                if (username === 'la lisa') {
-                    usernameValidated = true;
-                    passwordInput.classList.remove('hidden');
-                    document.querySelector('label[for="password"]').classList.remove('hidden');
-                    alert('Nombre de usuario correcto. Ahora ingresa tu contraseña.');
-                } else {
-                    alert('Nombre de usuario incorrecto.');
-                }
-            } else {
-                const password = passwordInput.value.trim().toLowerCase();
-                if (password === 'blackpink') {
-                    authSection.classList.add('hidden');
-                    questionSection.classList.remove('hidden');
-                } else {
-                    alert('Contraseña incorrecta.');
-                }
-            }
-        });
-
-        yesButton.addEventListener('click', () => {
-            questionSection.classList.add('hidden');
-            finalSection.classList.remove('hidden');
-            setTimeout(() => {
-                window.open('https://youtube.com/@andreagonzales-oj2je?si=YrxPfNwthAPFcY1x', '_blank');
-            }, 2000);
-        });
-
-        noButton.addEventListener('click', () => {
-            alert('¡Claro que lo eres! Pon que sí 😄');
-        });
-    </script>
 </body>
 </html>
